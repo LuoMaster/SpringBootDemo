@@ -1,0 +1,38 @@
+my:
+ name: forezp
+ age: 12
+ number:  ${random.int}
+ uuid : ${random.uuid}
+ max: ${random.int(10)}
+ value: ${random.value}
+ greeting: hi,i'm  ${my.name}
+
+spring:
+  profiles:
+    active: test
+  #数据源配置
+  datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        username: root
+        password: Lx118141.
+        url: jdbc:mysql://47.97.118.187:3306/test?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowMultiQueries=true
+   #mongodb配置
+  data:
+    mongodb:
+      host: 47.97.118.187
+  #redis配置
+#  redis:
+#    host: localhost
+#日志
+logging:
+  level:
+    root: info
+    com.xl.dao: debug
+
+mybatis:
+  #配置mapper.xml位置
+  mapperLocations: classpath:mapper/*Mapper.xml
+  #实体对象的位置
+  typeAliasesPackage: com.xl.vo
+
+

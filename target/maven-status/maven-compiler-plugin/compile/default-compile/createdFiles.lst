@@ -1,0 +1,10 @@
+com\xl\control\ApiController.class
+com\xl\DemoTest.class
+com\xl\ForezpVO.class
+com\xl\DemoVO.class
+com\xl\service\DemoService.class
+com\xl\DemoApplication.class
+com\xl\vo\Customer.class
+com\xl\dao\CustomerRepository.class
+com\xl\config\Swagger2.class
+com\xl\vo\Acoount.class

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xl.dao.AccountMapper">
+    <select id="list" parameterType="acoount" resultType="acoount">
+        select * from account
+        <where>
+            <if test="id !=null and id != ''">
+                and id = #{id}
+            </if>
+            <if test="name !=null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="money !=null and money != ''">
+                and money = #{money}
+            </if>
+        </where>
+    </select>
+
+    <update id="update" parameterType="acoount">
+        update account
+        <set>
+            <if test="money !=null and money != ''">
+                money = #{money},
+            </if>
+            <if test="name !=null and name != ''">
+                name = #{name},
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+    <insert id="insert"  parameterType="acoount">
+        insert into account
+        <set>
+            <if test="money !=null and money != ''">
+                money = #{money},
+            </if>
+            <if test="name !=null and name != ''">
+                name = #{name},
+            </if>
+            <if test="id !=null and id != ''">
+                id = #{id},
+            </if>
+        </set>
+    </insert>
+</mapper>
